@@ -51,7 +51,7 @@ This project is designed to visualize and store streaming cryptocurrency price p
     pipenv run python stream/producer.py
     ```
 
-4. Visit 0.0.0.0:8501 to visualize the streaming data
+4. Visit `0.0.0.0:8501` to visualize the streaming data
 
 ## Usage
 
