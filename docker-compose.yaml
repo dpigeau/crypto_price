@@ -1,0 +1,25 @@
+services:
+  kafka-broker:
+    image: apache/kafka:latest
+    container_name: broker
+    ports:
+      - 9092:9092
+    
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    volumes:
+      - ./db/scripts/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - ./db/scripts/views.sql:/views.sql
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
+    
+  app:
+    build: .
+    container_name: streamlit_app
+    ports:
+      - 8501:8501
+
+
